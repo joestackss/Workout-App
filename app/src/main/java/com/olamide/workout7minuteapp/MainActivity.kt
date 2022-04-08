@@ -3,6 +3,7 @@ package com.olamide.workout7minuteapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Toast
 import com.olamide.workout7minuteapp.databinding.ActivityMainBinding
 
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         myBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(myBinding?.root)
+
+
 
         myBinding?.frameslayout?.setOnClickListener{
            // Toast.makeText(this, "You just made FrameLayout Work", Toast.LENGTH_LONG)

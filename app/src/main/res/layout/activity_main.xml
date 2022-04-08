@@ -9,26 +9,73 @@
 
     >
 
+
     <ImageView
-        android:id="@+id/igView"
+        android:id="@+id/gymGuy"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="20dp"
-        android:src="@drawable/fitness"
-        app:layout_constraintBottom_toTopOf="@+id/frameslayout"
+        android:layout_height="350dp"
+        android:src="@drawable/guygym"
+        app:layout_constraintBottom_toTopOf="@id/layoutLinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/gymGuy"
+        app:layout_constraintBottom_toTopOf="@+id/frameslayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="Welcome to"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/powerHouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="center"
+            android:text="Power House Gym"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/planWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Plan your workout instantly from the app"
+            android:textColor="#afafaf"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
 
 
     <FrameLayout
         android:id="@+id/frameslayout"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/accent_grey_click"
+        android:background="@drawable/item_color_accent_border_ripple_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/igView">
+        app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
         <TextView
             android:layout_width="match_parent"
