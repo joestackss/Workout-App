@@ -3,12 +3,16 @@ package com.olamide.workout7minuteapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.olamide.workout7minuteapp.databinding.ActivityExerciseBinding
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-class ExerciseActivity : AppCompatActivity() {
+class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     //TODO(Step 1 - Adding a variables for the 10 seconds REST timer.)
 
@@ -41,6 +45,11 @@ class ExerciseActivity : AppCompatActivity() {
 
     private var binding : ActivityExerciseBinding? = null
 
+    // TODO (Step 2 - Variable for Text to Speech which will be initialized later on.)
+    // START
+    private var tts: TextToSpeech? = null // Variable for Text to Speech
+    // END
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
@@ -57,6 +66,11 @@ class ExerciseActivity : AppCompatActivity() {
         binding?.toolbarExercise?.setNavigationOnClickListener {
             onBackPressed()
         }
+
+        // TODO (Step 4 - Initializing the variable of Text to Speech.)
+        // START
+        tts = TextToSpeech(this, this)
+        // END
 
         // TODO(Step 7 - Initializing and Assigning a default exercise
         //  list to our list variable.)
@@ -173,6 +187,8 @@ class ExerciseActivity : AppCompatActivity() {
             exerciseProgress = 0
         }
 
+        speakOut(exerciseList!![currentExercisePosition].getName())
+
         // TODO(Step 9 - Setting up the current exercise name and image to view to the UI element.)
         // START
         /**
@@ -236,8 +252,43 @@ class ExerciseActivity : AppCompatActivity() {
             restTimer?.cancel()
             restProgress = 0
         }
+
+        // TODO (Step 7 - Shutting down the Text to Speech feature when activity is destroyed.)
+        // START
+        if (tts != null) {
+            tts!!.stop()
+            tts!!.shutdown()
+        }
+
         super.onDestroy()
         binding = null
     }
+
+    override fun onInit(status: Int) {
+        // TODO (Step 5 - After variable initializing set the language after a "successful result.)
+        // START
+        if (status == TextToSpeech.SUCCESS) {
+            // set US English as language for tts
+            val result = tts?.setLanguage(Locale.US)
+
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "The Language specified is not supported!")
+            }
+
+        } else {
+            Log.e("TTS", "Initialization Failed!")
+        }
+
+    }
     //END
+
+
+    // TODO (Step 6 - Making a function to speak the text.)
+    // START
+    /**
+     * Function is used to speak the text that we pass to it.
+     */
+    private fun speakOut(text: String) {
+        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
+    }
 }
