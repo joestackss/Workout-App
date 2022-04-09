@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/gymGuy"
-        app:layout_constraintBottom_toTopOf="@+id/frameslayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLay6"
         android:orientation="vertical"
         android:gravity="center"
         >
@@ -65,26 +65,62 @@
 
     </LinearLayout>
 
-
-    <FrameLayout
-        android:id="@+id/frameslayout"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/item_color_accent_border_ripple_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+    <LinearLayout
+        android:id="@+id/linearLay6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layoutLinear"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/poppins_extrabold"
-            android:gravity="center"
-            android:text="Start"
-            android:textSize="25sp" />
+        <FrameLayout
+            android:id="@+id/frameslayout"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/item_color_accent_border_ripple_background"
+            app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            >
 
-    </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="center"
+                android:text="@string/start"
+                android:textSize="25sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flBMI"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/item_color_accent_border_ripple_background"
+            app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="center"
+                android:text="@string/bmi"
+                android:textSize="25sp" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

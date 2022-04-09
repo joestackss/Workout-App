@@ -18,140 +18,385 @@
         />
 
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLay"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GET READY FOR"
-        android:textColor="@color/colorAccent"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/flRestView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        app:layout_constraintBottom_toTopOf="@+id/searchRec"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercise" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:paddingTop="25dp"
+        >
 
-    <FrameLayout
-        android:id="@+id/flRestView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/countdown_item_circular_color_accent_border"
-        app:layout_constraintBottom_toTopOf="@id/tvExerciseName"
-        app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity=""
+            android:paddingStart="20sp"
+            android:paddingEnd="0dp"
+            android:text="@string/get_ready_for"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/yourNextWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="start"
+            android:paddingStart="20sp"
+            android:paddingEnd="0dp"
+            android:text="@string/your_next_workout"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/searchRec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearLay"
+        app:layout_constraintBottom_toTopOf="@+id/linearLay2"
+        android:paddingLeft="23dp"
+        android:paddingRight="23dp"
+        android:paddingTop="10dp"
+        >
+
+        <View
+            android:id="@+id/solidView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/search_rounded_shape_color_accent_border"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/searchRec"
+        app:layout_constraintBottom_toTopOf="@+id/flRestView1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="23dp"
+        android:paddingRight="23dp"
+        >
+
+        <TextView
+            android:id="@+id/yourProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="@string/your_progress"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity=""
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/seeDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="end"
+            android:text="@string/see_details"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/flRestView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linearLay2"
+        app:layout_constraintBottom_toTopOf="@+id/cardViews1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:elevation="5dp"
+        app:cardCornerRadius="15dp"
         tools:visibility="visible"
         >
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:background="@drawable/circular_progress_gray"
-            android:indeterminate="false"
-            android:max="10"
-            android:progress="100"
-            android:progressDrawable="@drawable/circular_progress_bar"
-            android:rotation="-90" />
+        <LinearLayout
+            android:id="@+id/linearLay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/searchRec"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:gravity="center"
+            >
+
+            <FrameLayout
+                android:id="@+id/flRestView"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:background="@drawable/countdown_item_circular_color_accent_border"
+                app:layout_constraintBottom_toTopOf="@id/upcomingLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                >
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circular_progress_gray"
+                    android:indeterminate="false"
+                    android:max="10"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:rotation="-90"
+                    />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_extrabold"
+                        android:textColor="#f96864"
+                        android:textSize="45sp"
+                        android:textStyle="bold"
+                        tools:text="10" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLay4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/searchRec"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                >
+
+                <TextView
+                    android:id="@+id/upcomingLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_exercise"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tvUpcomingExerciseName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingStart="0sp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    tools:text="Exercise Name"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViews1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/flRestView1"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:elevation="5dp"
+        app:cardCornerRadius="15dp">
 
         <LinearLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center">
+            android:id="@+id/linearLay5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/searchRec"
+            app:layout_constraintBottom_toTopOf="@+id/cardViews"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            tools:visibility="visible"
+            >
 
-            <TextView
-                android:id="@+id/tvTimer"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:fontFamily="@font/poppins_extrabold"
-                android:textColor="#f96864"
-                android:textSize="25sp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pause"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
                 android:textStyle="bold"
-                tools:text="10" />
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:background="@drawable/search_rounded_shape_color_accent_border"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/search_rounded_shape_color_accent_border"
+                />
+
         </LinearLayout>
-    </FrameLayout>
 
-    <!--TODO (Step 1 - Showing the upcoming exercise name in the Get Ready For View.)-->
-    <!--START-->
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/flRestView"
-        android:id="@+id/upcomingLabel"
-        android:layout_width="wrap_content"
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLins"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/tvUpcomingExerciseName"
-        android:text="UPCOMING EXERCISE : "
-        android:textSize="16sp" />
+        app:layout_constraintBottom_toTopOf="@id/ivImage"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:paddingTop="20dp"
+        >
 
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/upcomingLabel"
-        android:id="@+id/tvUpcomingExerciseName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="5dp"
-        android:textColor="#212121"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        tools:text="Exercise Name" />
-    <!--END-->
-    <!-- First add the images to the Drawable folder and adding an imageview to show which is the current exercise along with the Name-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="@string/exercise"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="@string/_3_of_10"
+            android:textColor="#f96864"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:contentDescription="@string/image"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_jumping_jacks"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLins"
+        app:layout_constraintBottom_toTopOf="@+id/tvExerciseName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/push_ups_2"
+        android:contentDescription="@string/ladypushup"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/tvExerciseName"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercise" />
+        />
 
-    <!-- Todo 2: We also add a textView for ExerciseName and position it below the imageview-->
     <TextView
         android:id="@+id/tvExerciseName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ExerciseName"
-        android:textColor="@color/colorAccent"
-        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flExerciseView"
+        android:text="@string/jumping_jags"
+        android:fontFamily="@font/poppins_extrabold"
+        android:paddingStart="15sp"
+        android:paddingEnd="0dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:gravity="center"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivImage"
-        app:layout_constraintBottom_toTopOf="@+id/flExerciseView"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        />
 
-
-    <!-- Todo 3: We also need to change the position of this frame layout to be below the tvExercise-->
     <FrameLayout
         android:id="@+id/flExerciseView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:background="@drawable/countdown_item_circular_color_accent_border"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvExerciseName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvExerciseName"
+        android:visibility="gone"
         tools:visibility="visible"
         >
 
         <ProgressBar
             android:id="@+id/progressBarExercise"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="@drawable/circular_progress_gray"
             android:indeterminate="false"
@@ -161,8 +406,8 @@
             android:rotation="-90" />
 
         <LinearLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:gravity="center">
 
@@ -172,9 +417,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_extrabold"
                 android:textColor="#f96864"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 tools:text="10" />
         </LinearLayout>
     </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

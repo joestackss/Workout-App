@@ -23,11 +23,20 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent (this, ExerciseActivity::class.java )
             startActivity(intent)
         }
+
+        //TODO(Step 8 : Adding a click event to the BMI calculator button and navigating it to the BMI calculator feature.)
+        //START
+        myBinding?.flBMI?.setOnClickListener {
+            // Launching the BMI Activity
+            val intent = Intent(this, BMIActivity1::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        //Todo 4: TO avoid memory leak we unassign the binding once the activity is destroyed
+
+        //Todo 4: TO avoid memory leak we must unassign the binding once the activity is destroyed
         myBinding = null
     }
 }
