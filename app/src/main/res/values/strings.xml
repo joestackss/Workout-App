@@ -13,4 +13,5 @@
     <string name="ladypushup">ladyPushUp</string>
     <string name="jumping_jags">Jumping Jags</string>
     <string name="bmi">BMI</string>
+    <string name="weight_in_kg">WEIGHT (in kg)</string>
 </resources>
