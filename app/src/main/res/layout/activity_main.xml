@@ -9,27 +9,24 @@
 
     >
 
+    <LinearLayout
+        android:id="@+id/layoutLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frameslayout"
+        android:orientation="vertical"
+        android:gravity="center" >
 
     <ImageView
         android:id="@+id/gymGuy"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:src="@drawable/guygym"
         app:layout_constraintBottom_toTopOf="@id/layoutLinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <LinearLayout
-        android:id="@+id/layoutLinear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/gymGuy"
-        app:layout_constraintBottom_toTopOf="@+id/linearLay6"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
 
         <TextView
             android:id="@+id/welcomeText"
@@ -48,60 +45,50 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="center"
-            android:text="Power House Gym"
+            android:text="Power House"
             android:textColor="@color/black"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/planWorkout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:gravity="center"
-            android:text="Plan your workout instantly from the app"
-            android:textColor="#afafaf"
-            android:textSize="15sp"
-            />
-
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameslayout"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="@drawable/item_color_accent_border_ripple_background"
+        app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+        android:layout_weight="1"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="center"
+            android:text="@string/start"
+            android:textSize="25sp" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linearLay6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layoutLinear"
+        app:layout_constraintTop_toBottomOf="@+id/frameslayout"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <FrameLayout
-            android:id="@+id/frameslayout"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:background="@drawable/item_color_accent_border_ripple_background"
-            app:layout_constraintTop_toBottomOf="@id/layoutLinear"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_weight="1"
-            android:layout_margin="20dp"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppins_extrabold"
-                android:gravity="center"
-                android:text="@string/start"
-                android:textSize="25sp" />
-
-        </FrameLayout>
 
         <FrameLayout
             android:id="@+id/flBMI"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@drawable/item_color_accent_border_ripple_background"
             app:layout_constraintTop_toBottomOf="@id/layoutLinear"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -115,7 +102,28 @@
                 android:fontFamily="@font/poppins_extrabold"
                 android:gravity="center"
                 android:text="@string/bmi"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flHistory"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/item_color_accent_border_ripple_background"
+            app:layout_constraintTop_toBottomOf="@id/layoutLinear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="center"
+                android:text="@string/history"
+                android:textSize="18sp" />
 
         </FrameLayout>
     </LinearLayout>

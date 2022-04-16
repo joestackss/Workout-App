@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, BMIActivity1::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onDestroy() {

@@ -5,23 +5,22 @@ import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.olamide.workout7minuteapp.databinding.ActivityExerciseBinding
 import com.olamide.workout7minuteapp.databinding.DialogCustomBackConfirmationBinding
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
-    private var mCurrentPosition : Int = 1
+    // private var mCurrentPosition : Int = 1
     private var progressBar : ProgressBar? = null
 
     //TODO(Step 1 - Adding a variables for the 10 seconds REST timer.)
@@ -65,6 +64,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var player: MediaPlayer? = null
     // END
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
@@ -99,6 +99,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         //START
         setupRestView() // REST View is set in this function
         //END
+
     }
 
     //TODO(Step 3 - Setting up the Get Ready View with 10 seconds of timer.)-->
@@ -122,7 +123,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 Uri.parse("android.resource://com.olamide.workout7minuteapp/" + R.raw.fingerlicking_message_tone)
             player = MediaPlayer.create(applicationContext, soundURI)
             player?.isLooping = false // Sets the player to be looping or non-looping.
-            player?.start() // Starts Playback.
+            player?.start()  // Starts Playback.
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -204,6 +205,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 //  start the 30 seconds of Start Exercise View.)
                 // START
                 currentExercisePosition++
+                // When we are getting an updated position of exercise set that item in the list as selected and notify the adapter class.)
+                // START
+                exerciseList!![currentExercisePosition].setIsSelected(true) // Current Item is selected
+                // exerciseAdapter!!.notifyDataSetChanged() // Notified the current item to adapter class to reflect it into UI.
+                // END
                 setupExerciseView()
             }
         }.start()
@@ -292,11 +298,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
                     exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
                     setupRestView()
-                } else {
+                } /*else {
                     finish()
                     val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
                     startActivity(intent)
-                }
+                }*/
                 // END
             }
         }.start()
@@ -360,6 +366,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun speakOut(text: String) {
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
     }
+
+
+
+
 
     /**
      * Function is used to launch the custom confirmation dialog.

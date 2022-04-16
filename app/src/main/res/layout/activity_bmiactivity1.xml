@@ -113,6 +113,7 @@
             android:id="@+id/etUsMetricUnitWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="@string/weight_in_kg"
             android:inputType="numberDecimal"
             android:textSize="16sp" />
@@ -141,6 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Feet"
+            android:fontFamily="@font/poppins_semibold"
             android:inputType="numberDecimal"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -171,6 +173,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Inch"
+            android:fontFamily="@font/poppins_semibold"
             android:inputType="numberDecimal"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -38,7 +38,7 @@ class BMIActivity1 : AppCompatActivity() {
         //START
         setSupportActionBar(binding?.toolbarBmiActivity)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //set back button
-        supportActionBar?.title = "CALCULATE YOUR BMI" // Setting a title in the action bar.
+        supportActionBar?.title = "Calculate Your BMI" // Setting a title in the action bar.
         binding?.toolbarBmiActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
