@@ -1,5 +1,7 @@
-package com.olamide.workout7minuteapp
+package com.olamide.workout7minuteapp.utils
 
+import com.olamide.workout7minuteapp.R
+import com.olamide.workout7minuteapp.model.ExerciseModel
 import java.util.ArrayList
     /**
      * Constant Class where you can add the constant values of the project.

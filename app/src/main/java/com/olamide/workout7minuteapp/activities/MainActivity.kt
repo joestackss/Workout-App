@@ -1,10 +1,8 @@
-package com.olamide.workout7minuteapp
+package com.olamide.workout7minuteapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.widget.Toast
 import com.olamide.workout7minuteapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,13 +22,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //TODO(Step 8 : Adding a click event to the BMI calculator button and navigating it to the BMI calculator feature.)
+      /*  //TODO(Step 8 : Adding a click event to the BMI calculator button and navigating it to the BMI calculator feature.)
         //START
         myBinding?.flBMI?.setOnClickListener {
             // Launching the BMI Activity
             val intent = Intent(this, BMIActivity1::class.java)
             startActivity(intent)
-        }
+        } */
 
     }
 

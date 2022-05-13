@@ -1,8 +1,7 @@
-package com.olamide.workout7minuteapp
+package com.olamide.workout7minuteapp.activities
 
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -12,9 +11,11 @@ import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.olamide.workout7minuteapp.R
 import com.olamide.workout7minuteapp.databinding.ActivityExerciseBinding
 import com.olamide.workout7minuteapp.databinding.DialogCustomBackConfirmationBinding
+import com.olamide.workout7minuteapp.model.ExerciseModel
+import com.olamide.workout7minuteapp.utils.Constants
 import java.util.*
 
 

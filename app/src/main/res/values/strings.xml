@@ -15,4 +15,15 @@
     <string name="bmi">BMI</string>
     <string name="weight_in_kg">WEIGHT (in kg)</string>
     <string name="history">History</string>
+
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forget_your_password">Forgot Your Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

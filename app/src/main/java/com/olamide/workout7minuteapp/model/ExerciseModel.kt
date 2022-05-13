@@ -1,4 +1,4 @@
-package com.olamide.workout7minuteapp
+package com.olamide.workout7minuteapp.model
 /**
  * This is used for exercise details it is a custom model class.
  * with getter setter functions and a constructor

@@ -1,9 +1,10 @@
-package com.olamide.workout7minuteapp
+package com.olamide.workout7minuteapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.olamide.workout7minuteapp.R
 import com.olamide.workout7minuteapp.databinding.ActivityBmiactivity1Binding
 import java.math.BigDecimal
 import java.math.RoundingMode

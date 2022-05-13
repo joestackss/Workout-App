@@ -13,4 +13,10 @@
     <color name="colorPrimary">#B2212121</color>
     <color name="colorPrimaryDark">#B2212121</color>
     <color name="colorAccent">#008F24</color>
+
+    <color name="gray">#6C757D</color>
+
+
+    <!--TODO (Step 8: Add all the color values here.)-->
+    <color name="snackbar_error_color">#F72400</color>
 </resources>
